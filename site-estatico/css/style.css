@@ -1,0 +1,27 @@
+/* Estilos do site. Comece pelo celular e use @media (min-width: ...) para telas maiores. */
+
+:root {
+  /* TODO: cores e fontes da identidade visual do cliente (ver ata da REP) */
+  --cor-primaria: #333333;
+  --cor-texto: #111111;
+  --cor-fundo: #ffffff;
+  --fonte-base: system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fonte-base);
+  color: var(--cor-texto);
+  background: var(--cor-fundo);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}

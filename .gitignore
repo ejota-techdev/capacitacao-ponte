@@ -1,0 +1,14 @@
+# Dependências e build
+node_modules/
+.next/
+out/
+.vercel/
+
+# Segredos: nunca vão para o repositório
+.env
+.env*.local
+
+# Sistema
+.DS_Store
+Thumbs.db
+*.log
