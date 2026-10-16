@@ -4,4 +4,4 @@ Primeiro teste do Guia rápido de Git: cada integrante cria uma branch com o pr�
 adiciona uma linha na tabela abaixo, faz commit, publica e abre um PR.
 
 | Nome | Usuário no GitHub | Data |
-| --- | --- | --- |
+| Guilherme Arozo | guilhermearozo | 16/10/26 |
