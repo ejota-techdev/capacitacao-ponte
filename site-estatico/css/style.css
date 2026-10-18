@@ -25,3 +25,46 @@ img {
   max-width: 100%;
   display: block;
 }
+
+.avisos {
+  display: flex;
+  background-color: #404040;
+  justify-content: center;
+  color: white;
+  align-items: center;
+}
+
+header span{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  background-color: white;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px 20px;
+}
+
+.container-hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  padding: 40px;
+  background-color: #F2F2F2;
+}
+
+.container-hero-text {
+  max-width: 552px;
+  padding: 0 20px;
+  max-height: 455px;
+}
+
+.container-hero-img {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 552px;
+  padding: 0 20px;
+  max-height: 455px;
+  background-color: #DEDEDE;
+}
