@@ -1,11 +1,13 @@
-/* Estilos do site. Comece pelo celular e use @media (min-width: ...) para telas maiores. */
-
 :root {
   /* TODO: cores e fontes da identidade visual do cliente (ver ata da REP) */
   --cor-primaria: #333333;
   --cor-texto: #111111;
   --cor-fundo: #ffffff;
+  --cor-fundo-alt: #F2F2F2;
+  --cor-placeholder: #DEDEDE;
+  --cor-erro: #B3261E;
   --fonte-base: system-ui, sans-serif;
+  --largura-max: 1120px;
 }
 
 *,
@@ -26,55 +28,116 @@ img {
   display: block;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* Botão "secondary" do Bootstrap com a cor do wireframe */
+.theme-secondary {
+  --bs-theme-bg: var(--cor-primaria);
+  --bs-theme-contrast: #ffffff;
+}
+
 .avisos {
   display: flex;
   background-color: #404040;
   justify-content: center;
   color: white;
   align-items: center;
+  padding: 6px 16px;
+  text-align: center;
+  font-size: 13px;
 }
 
-header span{
+.avisos p { margin: 0; }
+
+.barra-nav {
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   gap: 20px;
   background-color: white;
-  align-items: center;
-  justify-content: flex-end;
   padding: 10px 20px;
 }
 
+.placeholder-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--cor-placeholder);
+  color: #6b6b6b;
+  font-size: 12px;
+  text-align: center;
+  padding: 12px;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  background-color: var(--cor-fundo-alt);
+  min-height: 460px;
+  display: flex;
+  align-items: center;
+}
+
 .container-hero {
+  width: 100%;
+  max-width: var(--largura-max);
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: stretch;
+  gap: 40px;
   padding: 40px;
-  background-color: #F2F2F2;
 }
 
 .container-hero-text {
+  flex: 1 1 50%;
   max-width: 552px;
-  padding: 0 20px;
-  max-height: 455px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+
+.container-hero-text > *,
+.text-para-quem > * {
+  margin: 0;
+}
+
+.botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .container-hero-img {
+  flex: 1 1 50%;
   display: flex;
   justify-content: center;
   align-items: stretch;
   max-width: 584px;
-  padding: 0 20px;
+  min-height: 300px;
   max-height: 420px;
-  background-color: #DEDEDE;
+  background-color: var(--cor-placeholder);
+}
+
+/* ---------- Seções ---------- */
+.secao {
+  padding: 56px 20px;
+}
+
+.secao-cinza {
+  background-color: var(--cor-fundo-alt);
 }
 
 .text-para-quem {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  margin-left: 30px;
+  flex-direction: column;
+  gap: 6px;
+  max-width: var(--largura-max);
+  margin: 0 auto 28px;
 }
 
 .container-para-quem {
@@ -83,8 +146,164 @@ header span{
   justify-content: center;
   align-items: stretch;
   gap: 20px;
+  max-width: var(--largura-max);
+  margin: 0 auto;
 }
 
-.container-para-quem-item{
+.container-para-quem-item {
+  flex: 1 1 0;
+  max-width: 540px;
+}
 
+.container-para-quem-item .placeholder-img {
+  height: 200px;
+}
+
+.container-passos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: var(--largura-max);
+  margin: 0 auto;
+}
+
+.card{
+  background-color: var(--cor-fundo);
+}
+
+.text-muted{
+  color: var(--cor-primaria);
+}
+
+.card-title {
+  color: black;
+}
+
+.card-text{
+  color: var(--cor-primaria);
+}
+
+/* ---------- Contato ---------- */
+.container-contato {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  align-items: start;
+}
+
+.form-lead {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-control{
+  background-color: var(--cor-fundo);
+}
+
+.form-label{
+  color: black;
+}
+
+.form-select{
+  background-color: var(--cor-fundo);
+  color: black;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.campo.invalido .form-control,
+.campo.invalido .form-select {
+  border-color: var(--cor-erro);
+}
+
+.erro {
+  color: var(--cor-erro);
+  font-size: 12px;
+}
+
+.nota-form {
+  margin: 0;
+  font-size: 12px;
+}
+
+.status-form { margin: 0; font-weight: 600; }
+.status-form.ok { color: #1B6E3A; }
+.status-form.falha { color: var(--cor-erro); }
+
+.info-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.info-contato p,
+.info-contato h6 { margin: 0; }
+
+.mapa { height: 220px; }
+
+/* ---------- WhatsApp fixo ---------- */
+.whatsapp-fixo {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 50;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  background-color: #2B2B2B;
+  color: white;
+  padding: 40px 20px;
+}
+
+.container-footer {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  gap: 24px;
+  max-width: var(--largura-max);
+  margin: 0 auto;
+}
+
+.logo-footer { font-weight: 700; margin: 0; }
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.footer-col h6,
+.footer-col p { margin: 0; }
+
+.footer-col a { color: #ddd; text-decoration: none; }
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 900px) {
+  .container-hero { flex-direction: column; padding: 32px 20px; }
+  .container-hero-text,
+  .container-hero-img { max-width: none; width: 100%; }
+  .container-hero-img { min-height: 240px; }
+  .container-passos,
+  .container-contato { grid-template-columns: 1fr; }
+  .container-footer { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 720px) {
+  .container-para-quem { flex-direction: column; align-items: center; }
+  .container-para-quem-item { max-width: none; width: 100%; }
+  .botoes .btn-solid { flex: 1 1 100%; }
+  .secao { padding: 40px 20px; }
+  .container-footer { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }
