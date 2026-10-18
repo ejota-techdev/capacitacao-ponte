@@ -63,8 +63,28 @@ header span{
   display: flex;
   justify-content: center;
   align-items: stretch;
-  max-width: 552px;
+  max-width: 584px;
   padding: 0 20px;
-  max-height: 455px;
+  max-height: 420px;
   background-color: #DEDEDE;
+}
+
+.text-para-quem {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 30px;
+}
+
+.container-para-quem {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+}
+
+.container-para-quem-item{
+
 }
