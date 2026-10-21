@@ -201,6 +201,7 @@ html {
 
 .form-control{
   background-color: var(--cor-fundo);
+  color: black;
 }
 
 .form-label{
