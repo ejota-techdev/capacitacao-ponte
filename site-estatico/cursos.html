@@ -4,9 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cursos | Ponte Idiomas</title>
-  <meta name="description" content="TODO: descrição curta para o Google">
+  <meta name="description" content="Cursos de inglês e espanhol da Ponte Idiomas para crianças, adolescentes e adultos, e aulas de conversação. Turmas de até 8 alunos e duas aulas por semana.">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/cursos.css">
   <script src="js/main.js" defer></script>
+  <script src="js/dados-cursos.js" defer></script>
+  <script src="js/cursos.js" defer></script>
 </head>
 <body>
   <header>
@@ -16,13 +19,68 @@
 
   <main>
     <!-- Título da página: Cursos -->
-    <!-- TODO -->
+    <section class="cursos-topo" aria-labelledby="titulo-pagina">
+      <nav class="breadcrumb" aria-label="Você está em">
+        <ol>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="cursos.html" aria-current="page">Cursos</a></li>
+        </ol>
+      </nav>
+
+      <h1 id="titulo-pagina">Nossos cursos</h1>
+      <p class="cursos-topo__subtitulo">Turmas de até 8 alunos e duas aulas por semana. Encontre o curso pela idade e pelo objetivo.</p>
+
+      <!-- Filtros: o data-filtro precisa bater com a "categoria" dos cursos em js/dados-cursos.js -->
+      <div class="filtros" role="group" aria-label="Filtrar cursos por idioma">
+        <button type="button" class="filtro" data-filtro="todos" aria-pressed="true">Todos</button>
+        <button type="button" class="filtro" data-filtro="ingles" aria-pressed="false">Inglês</button>
+        <button type="button" class="filtro" data-filtro="espanhol" aria-pressed="false">Espanhol</button>
+        <button type="button" class="filtro" data-filtro="conversacao" aria-pressed="false">Conversação</button>
+      </div>
+      <!-- Avisa o leitor de tela quantos cursos ficaram visíveis depois de filtrar -->
+      <p id="resultado-filtro" class="visualmente-oculto" aria-live="polite"></p>
+    </section>
 
     <!-- Conteúdo da página (ver wireframe) -->
-    <!-- TODO -->
+    <noscript>
+      <p>Para ver a lista de cursos, a tabela de valores e as perguntas frequentes, ative o JavaScript no seu navegador.</p>
+    </noscript>
+
+    <section class="cursos-lista" aria-label="Lista de cursos">
+      <!-- Cards montados por js/cursos.js a partir de js/dados-cursos.js -->
+      <ul id="lista-cursos" class="cards-cursos"></ul>
+    </section>
+
+    <section class="valores" aria-labelledby="titulo-valores">
+      <h2 id="titulo-valores">Valores e descontos</h2>
+      <p>Os descontos não acumulam.</p>
+      <table id="tabela-valores" aria-labelledby="titulo-valores">
+        <thead>
+          <tr>
+            <th scope="col">Item</th>
+            <th scope="col">Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Linhas montadas por js/cursos.js -->
+        </tbody>
+      </table>
+    </section>
+
+    <section class="faq" aria-labelledby="titulo-faq">
+      <h2 id="titulo-faq">Perguntas frequentes</h2>
+      <!-- Perguntas montadas por js/cursos.js -->
+      <div id="lista-faq" class="faq__lista"></div>
+    </section>
 
     <!-- Chamada final -->
-    <!-- TODO -->
+    <section class="chamada-final" aria-labelledby="titulo-chamada">
+      <h2 id="titulo-chamada">Não sabe por onde começar? Faça o teste de nivelamento.</h2>
+      <!-- O href abaixo é a reserva para quem está sem JavaScript: js/cursos.js troca pelo DESTINO_TESTE
+           de js/dados-cursos.js. Se mudar o destino lá, mude aqui também. Depende de id="contato" na Home
+           (responsabilidade da dupla); no Next.js vira /#contato. -->
+      <a class="botao" id="botao-chamada-final" href="index.html#contato">Fazer teste</a>
+    </section>
   </main>
 
   <footer>
