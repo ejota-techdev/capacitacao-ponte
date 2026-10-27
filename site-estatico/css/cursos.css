@@ -1,0 +1,366 @@
+/* Estilos da página Cursos (cursos.html).
+   Mobile-first: o estilo base é o do celular; @media (min-width) ajusta telas maiores.
+   Cores: só as variáveis do :root de css/style.css. Os tons de cinza abaixo são misturas
+   delas, para mudarem junto quando as cores da marca entrarem (códigos [PENDENTE]). */
+
+main {
+  --cursos-fundo-suave: color-mix(in srgb, var(--cor-texto) 5%, var(--cor-fundo));
+  --cursos-fundo-imagem: color-mix(in srgb, var(--cor-texto) 13%, var(--cor-fundo));
+  --cursos-borda: color-mix(in srgb, var(--cor-texto) 18%, var(--cor-fundo));
+  --cursos-texto-suave: color-mix(in srgb, var(--cor-texto) 72%, var(--cor-fundo));
+  --cursos-largura-maxima: 70rem;
+  --cursos-margem: 1rem;
+  --cursos-espaco-cards: 1.5rem;
+  --cursos-raio: 0.5rem;
+}
+
+/* Seções: fundo de ponta a ponta, conteúdo limitado à largura máxima e centralizado */
+.cursos-topo,
+.cursos-lista,
+.valores,
+.faq,
+.chamada-final,
+main > noscript p {
+  padding-block: 2.5rem;
+  padding-inline: max(var(--cursos-margem), (100% - var(--cursos-largura-maxima)) / 2);
+}
+
+.cursos-topo,
+.valores,
+main > noscript p {
+  background: var(--cursos-fundo-suave);
+}
+
+main > noscript p {
+  margin: 0;
+  padding-block: 1rem;
+}
+
+/* Leitores de tela leem, mas não aparece na tela */
+.visualmente-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Foco de teclado visível em tudo que é clicável */
+main a:focus-visible,
+main button:focus-visible,
+main summary:focus-visible {
+  outline: 3px solid var(--cor-primaria);
+  outline-offset: 2px;
+}
+
+/* Topo: breadcrumb, título, subtítulo e filtros */
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.875rem;
+  color: var(--cursos-texto-suave);
+}
+
+.breadcrumb li + li::before {
+  content: "/";
+  content: "/" / ""; /* separador decorativo: o leitor de tela não lê */
+  margin-right: 0.5rem;
+}
+
+.breadcrumb a {
+  color: inherit;
+}
+
+.breadcrumb a[aria-current="page"] {
+  text-decoration: none;
+}
+
+.cursos-topo h1 {
+  margin: 1rem 0 0.5rem;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.cursos-topo__subtitulo,
+.valores > p {
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  color: var(--cursos-texto-suave);
+}
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.filtro {
+  min-height: 2.75rem;
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--cursos-borda);
+  border-radius: 999px;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  font: inherit;
+  font-size: 0.9375rem;
+  cursor: pointer;
+}
+
+.filtro[aria-pressed="true"] {
+  border-color: var(--cor-primaria);
+  background: var(--cor-primaria);
+  color: var(--cor-fundo);
+}
+
+/* Cards: empilhados no celular, como na Home */
+.cards-cursos {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cursos-espaco-cards);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card-curso {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1rem;
+  border: 1px solid var(--cursos-borda);
+  border-radius: var(--cursos-raio);
+  background: var(--cor-fundo);
+}
+
+.card-curso__imagem {
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  margin-bottom: 1rem;
+  border-radius: calc(var(--cursos-raio) / 2);
+  object-fit: cover;
+}
+
+.card-curso__imagem--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cursos-fundo-imagem);
+  color: var(--cursos-texto-suave);
+  font-size: 0.875rem;
+}
+
+.card-curso__categoria {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--cursos-texto-suave);
+}
+
+.card-curso__nome {
+  margin: 0.25rem 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.card-curso__detalhes {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--cursos-texto-suave);
+}
+
+.card-curso__preco {
+  margin: 0.75rem 0 1rem;
+  font-weight: 700;
+}
+
+/* margin-top: auto empurra o botão para o pé do card, alinhando cards de alturas diferentes */
+.card-curso__botao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  margin-top: auto;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--cor-texto);
+  border-radius: var(--cursos-raio);
+  color: var(--cor-texto);
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+}
+
+.card-curso__botao:hover {
+  background: var(--cursos-fundo-suave);
+}
+
+/* Valores e descontos */
+.valores h2,
+.faq h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.75rem;
+  line-height: 1.2;
+}
+
+.valores table {
+  width: 100%;
+  margin-top: 1.5rem;
+  border: 1px solid var(--cursos-borda);
+  border-radius: var(--cursos-raio);
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  background: var(--cor-fundo);
+  font-size: 0.9375rem;
+}
+
+.valores th,
+.valores td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.valores thead th {
+  background: var(--cursos-fundo-suave);
+}
+
+.valores tbody th {
+  font-weight: 400;
+}
+
+.valores td,
+.valores thead th:last-child {
+  text-align: right;
+  font-weight: 700;
+}
+
+/* Perguntas frequentes */
+.faq__lista {
+  margin-top: 1.5rem;
+  border: 1px solid var(--cursos-borda);
+  border-radius: var(--cursos-raio);
+}
+
+.faq__item + .faq__item {
+  border-top: 1px solid var(--cursos-borda);
+}
+
+.faq__item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 2.75rem;
+  padding: 1rem;
+  font-weight: 600;
+  list-style: none;
+  cursor: pointer;
+}
+
+.faq__item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq__item summary::after {
+  content: "+";
+  content: "+" / "";
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.faq__item[open] summary::after {
+  content: "−";
+  content: "−" / "";
+}
+
+.faq__item p {
+  margin: 0;
+  padding: 0 1rem 1rem;
+  line-height: 1.5;
+  color: var(--cursos-texto-suave);
+}
+
+/* Chamada final */
+.chamada-final {
+  background: var(--cor-primaria);
+  color: var(--cor-fundo);
+  text-align: center;
+}
+
+.chamada-final h2 {
+  margin: 0 0 1.5rem;
+  font-size: 1.5rem;
+  line-height: 1.3;
+}
+
+.chamada-final .botao {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: var(--cursos-raio);
+  background: var(--cor-fundo);
+  color: var(--cor-primaria);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.chamada-final a:focus-visible {
+  outline-color: var(--cor-fundo);
+}
+
+/* Tablet: cards em duas colunas */
+@media (min-width: 40em) {
+  .cards-cursos {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .cards-cursos > li {
+    flex: 1 1 calc((100% - var(--cursos-espaco-cards)) / 2);
+    max-width: calc((100% - var(--cursos-espaco-cards)) / 2);
+  }
+}
+
+/* Desktop: três cards na primeira linha; os que sobram crescem até metade da largura (wireframe) */
+@media (min-width: 64em) {
+  main {
+    --cursos-margem: 2rem;
+  }
+
+  .cursos-topo,
+  .cursos-lista,
+  .valores,
+  .faq,
+  .chamada-final {
+    padding-block: 4rem;
+  }
+
+  .cards-cursos > li {
+    flex-basis: calc((100% - 2 * var(--cursos-espaco-cards)) / 3);
+  }
+
+  .cursos-topo h1 {
+    font-size: 2.5rem;
+  }
+
+  .valores h2,
+  .faq h2 {
+    font-size: 2.25rem;
+  }
+
+  .chamada-final h2 {
+    font-size: 2rem;
+  }
+}
