@@ -12,9 +12,37 @@
   <script src="js/cursos.js" defer></script>
 </head>
 <body>
+  <!-- Header: mesmo conteúdo da Home (index.html). Se mudar lá, mude aqui também.
+       A Home usa Bootstrap; aqui o mesmo HTML é estilizado em css/cursos.css, sem Bootstrap.
+       O menu do celular abre e fecha com HTML nativo (<dialog> + command/commandfor). -->
   <header>
-    <!-- Header -->
-    <!-- TODO -->
+    <!-- Barra de aviso -->
+    <div class="avisos">
+      <p>Matrículas 2027 a partir de 03/11 · matrícula grátis durante a campanha</p>
+    </div>
+
+    <nav class="barra-nav" aria-label="Principal">
+      <a class="navbar-brand" href="index.html">PONTE IDIOMAS</a>
+
+      <button class="navbar-toggler" type="button" command="show-modal" commandfor="menuDrawer" aria-label="Abrir menu">
+        <span class="navbar-toggler-icon" aria-hidden="true"></span>
+      </button>
+
+      <dialog class="drawer" id="menuDrawer" aria-labelledby="menuDrawerLabel">
+        <div class="drawer-header">
+          <h2 class="drawer-title" id="menuDrawerLabel">Menu</h2>
+          <button type="button" class="btn-close" command="close" commandfor="menuDrawer" aria-label="Fechar menu">&times;</button>
+        </div>
+        <ul class="navbar-nav">
+          <li><a class="nav-link" href="index.html">Início</a></li>
+          <li><a class="nav-link" href="cursos.html" aria-current="page">Cursos</a></li>
+          <li><a class="nav-link" href="#">Metodologia</a></li>
+          <li><a class="nav-link" href="#">Equipe</a></li>
+          <li><a class="nav-link" href="index.html#contato">Contato</a></li>
+          <li><a class="nav-cta" href="index.html#contato">Fazer teste de nível</a></li>
+        </ul>
+      </dialog>
+    </nav>
   </header>
 
   <main>
@@ -83,9 +111,33 @@
     </section>
   </main>
 
+  <!-- Botão fixo de WhatsApp (mesmo da Home). Número do WhatsApp: [PENDENTE].
+       O agente de atendimento é da semana 4; por enquanto é só o link. -->
+  <a href="#" class="whatsapp-fixo">WhatsApp</a>
+
+  <!-- Rodapé: mesmo conteúdo da Home (index.html). Se mudar lá, mude aqui também. -->
   <footer>
-    <!-- Rodapé -->
-    <!-- TODO -->
+    <div class="container-footer">
+      <p class="logo-footer">PONTE IDIOMAS</p>
+      <div class="footer-col">
+        <h2>Ponte Idiomas</h2>
+        <p>Inglês e espanhol</p>
+        <p>Tijuca · Rio de Janeiro</p>
+      </div>
+      <nav class="footer-col" aria-label="Rodapé">
+        <h2>Navegação</h2>
+        <a href="cursos.html" aria-current="page">Cursos</a>
+        <a href="#">Metodologia</a>
+        <a href="#">Equipe</a>
+        <a href="index.html#contato">Contato</a>
+      </nav>
+      <div class="footer-col">
+        <h2>Contato</h2>
+        <p>WhatsApp</p>
+        <p>Instagram @ponte.idiomas</p>
+        <p>Seg a sex, 9h às 20h</p>
+      </div>
+    </div>
   </footer>
 </body>
 </html>
