@@ -36,3 +36,8 @@ O formulário envia os dados para `POST /api/lead`. Configure
 `N8N_LEAD_WEBHOOK_URL` em `site/.env.local` com a URL do webhook de recebimento
 do n8n. Sem essa configuração, a API responde `503` e o formulário informa que
 o envio não está disponível. O endereço do webhook é usado somente no servidor.
+
+Para desenvolvimento, a URL `webhook-test` do n8n só recebe requisições enquanto
+o Webhook estiver em modo de teste, aguardando um evento. Para manter o fluxo
+disponível, ative-o no n8n e use a Production URL (`/webhook/...`) na variável de
+ambiente. Reinicie o Next.js após alterar `.env.local`.
