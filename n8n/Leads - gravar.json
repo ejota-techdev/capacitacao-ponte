@@ -49,7 +49,7 @@
             {
               "id": "0eb0afe5-e94b-4cd5-9080-fbc9546fe2a0",
               "name": "interesse",
-              "value": "={{ $json.body.interesse }}",
+              "value": "={{ $json.body.curso }}",
               "type": "string"
             },
             {
