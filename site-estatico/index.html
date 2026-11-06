@@ -5,10 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Início | Ponte Idiomas</title>
   <meta name="description" content="TODO: descrição curta para o Google">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
-  <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -20,28 +18,35 @@
     </div>
 
     <!-- Header -->
-    <nav class="navbar md:navbar-expand barra-nav" aria-label="Principal">
+    <nav class="barra-nav" aria-label="Principal">
       <a class="navbar-brand" href="index.html">PONTE IDIOMAS</a>
+
+      <ul class="navbar-nav navegacao-desktop">
+        <li><a class="nav-link" href="index.html" aria-current="page">Início</a></li>
+        <li><a class="nav-link" href="cursos.html">Cursos</a></li>
+        <li><a class="nav-link" href="#">Metodologia</a></li>
+        <li><a class="nav-link" href="#">Equipe</a></li>
+        <li><a class="nav-link" href="#contato">Contato</a></li>
+        <li><a class="nav-cta" href="#contato">Fazer teste de nível</a></li>
+      </ul>
 
       <button class="navbar-toggler" type="button" command="show-modal" commandfor="menuDrawer" aria-label="Abrir menu">
         <span class="navbar-toggler-icon" aria-hidden="true"></span>
       </button>
 
-      <dialog class="drawer drawer-end" tabindex="-1" id="menuDrawer" aria-labelledby="menuDrawerLabel">
+      <dialog class="drawer" id="menuDrawer" aria-labelledby="menuDrawerLabel">
         <div class="drawer-header">
-          <h5 class="drawer-title" id="menuDrawerLabel">Menu</h5>
-          <button type="button" class="btn-close" command="close" commandfor="menuDrawer" aria-label="Fechar"></button>
+          <h2 class="drawer-title" id="menuDrawerLabel">Menu</h2>
+          <button type="button" class="btn-close" command="close" commandfor="menuDrawer" aria-label="Fechar menu">&times;</button>
         </div>
-        <div class="drawer-body">
-          <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="index.html" aria-current="page">Início</a></li>
-            <li class="nav-item"><a class="nav-link" href="cursos.html">Cursos</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Metodologia</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Equipe</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
-            <li class="nav-item"><a href="#contato" role="button" class="theme-secondary btn-solid">Fazer teste de nível</a></li>
-          </ul>
-        </div>
+        <ul class="navbar-nav">
+          <li><a class="nav-link" href="index.html" aria-current="page">Início</a></li>
+          <li><a class="nav-link" href="cursos.html">Cursos</a></li>
+          <li><a class="nav-link" href="#">Metodologia</a></li>
+          <li><a class="nav-link" href="#">Equipe</a></li>
+          <li><a class="nav-link" href="#contato">Contato</a></li>
+          <li><a class="nav-cta" href="#contato">Fazer teste de nível</a></li>
+        </ul>
       </dialog>
     </nav>
   </header>
@@ -51,12 +56,12 @@
     <section class="hero">
       <div class="container-hero">
         <div class="container-hero-text">
-          <p class="text-muted">Inglês e espanhol na Tijuca</p>
+          <p class="texto-suave">Inglês e espanhol na Tijuca</p>
           <h1>Fale outro idioma com confiança, em turmas de até 8 alunos</h1>
           <p>Professores com experiência no exterior, aulas de conversação e acompanhamento de perto, para crianças, adolescentes e adultos.</p>
           <div class="botoes">
-            <a href="#contato" role="button" class="theme-secondary btn-solid">Fazer teste de nivelamento</a>
-            <a href="#" role="button" class="theme-inverse btn-solid btn-styled">Agendar aula experimental</a>
+            <a href="#contato" class="botao botao-primario">Fazer teste de nivelamento</a>
+            <a href="#" class="botao botao-secundario">Agendar aula experimental</a>
           </div>
         </div>
 
@@ -77,27 +82,27 @@
 
       <div class="container-para-quem">
 
-        <section class="card container-para-quem-item" style="background-color: var(--color-primary);">
-          <div class="placeholder-img card-img-top" role="img" aria-label="Foto de turma infantil (com autorização)">
+        <section class="cartao container-para-quem-item">
+          <div class="placeholder-img cartao-imagem" role="img" aria-label="Foto de turma infantil (com autorização)">
             [ imagem ] Foto de turma infantil (com autorização)
           </div>
-          <div class="card-body">
-            <h6 class="text-muted">PARA SEUS FILHOS</h6>
-            <h4 class="card-title">Kids (7 a 11) e Teens (12 a 16)</h4>
-            <p class="card-text">Turmas pequenas, aulas dinâmicas e relatório de evolução para os pais ao fim de cada nível.</p>
-            <a href="cursos.html" style="color: black;">Ver cursos para crianças e adolescentes &rarr;</a>
+          <div class="cartao-corpo">
+            <h6 class="texto-suave">PARA SEUS FILHOS</h6>
+            <h4 class="titulo-cartao">Kids (7 a 11) e Teens (12 a 16)</h4>
+            <p class="texto-cartao">Turmas pequenas, aulas dinâmicas e relatório de evolução para os pais ao fim de cada nível.</p>
+            <a class="link-cartao" href="cursos.html">Ver cursos para crianças e adolescentes &rarr;</a>
           </div>
         </section>
 
-        <section class="card container-para-quem-item">
-          <div class="placeholder-img card-img-top" role="img" aria-label="Foto de turma adulta">
+        <section class="cartao container-para-quem-item">
+          <div class="placeholder-img cartao-imagem" role="img" aria-label="Foto de turma adulta">
             [ imagem ] Foto de turma adulta
           </div>
-          <div class="card-body">
-            <h6 class="text-muted">PARA VOCÊ</h6>
-            <h4 class="card-title">Adultos, Conversação e Espanhol</h4>
-            <p class="card-text">Horários para quem trabalha e espanhol também online ao vivo. Conversação para destravar a fala.</p>
-            <a href="cursos.html" style="color: black;">Ver cursos para adultos &rarr;</a>
+          <div class="cartao-corpo">
+            <h6 class="texto-suave">PARA VOCÊ</h6>
+            <h4 class="titulo-cartao">Adultos, Conversação e Espanhol</h4>
+            <p class="texto-cartao">Horários para quem trabalha e espanhol também online ao vivo. Conversação para destravar a fala.</p>
+            <a class="link-cartao" href="cursos.html">Ver cursos para adultos &rarr;</a>
           </div>
         </section>
 
@@ -111,17 +116,17 @@
       </div>
 
       <div class="container-passos">
-        <article class="card"><div class="card-body">
-          <h4 class="card-title">1. Teste de nivelamento</h4>
-          <p class="card-text">Online, 30 minutos, mais uma conversa rápida com um professor. Quem nunca estudou começa do básico.</p>
+        <article class="cartao"><div class="cartao-corpo">
+          <h4 class="titulo-cartao">1. Teste de nivelamento</h4>
+          <p class="texto-cartao">Online, 30 minutos, mais uma conversa rápida com um professor. Quem nunca estudou começa do básico.</p>
         </div></article>
-        <article class="card"><div class="card-body">
-          <h4 class="card-title">2. Aula experimental</h4>
-          <p class="card-text">Gratuita, na turma indicada para o seu nível.</p>
+        <article class="cartao"><div class="cartao-corpo">
+          <h4 class="titulo-cartao">2. Aula experimental</h4>
+          <p class="texto-cartao">Gratuita, na turma indicada para o seu nível.</p>
         </div></article>
-        <article class="card"><div class="card-body">
-          <h4 class="card-title">3. Matrícula</h4>
-          <p class="card-text">Escolha o horário e garanta a sua vaga na turma.</p>
+        <article class="cartao"><div class="cartao-corpo">
+          <h4 class="titulo-cartao">3. Matrícula</h4>
+          <p class="texto-cartao">Escolha o horário e garanta a sua vaga na turma.</p>
         </div></article>
       </div>
     </section>
@@ -133,17 +138,17 @@
       </div>
 
       <div class="container-passos">
-        <article class="card"><div class="card-body">
-          <h4 class="card-title">Até 8 alunos por turma</h4>
-          <p class="card-text">Todo mundo fala em todas as aulas.</p>
+        <article class="cartao"><div class="cartao-corpo">
+          <h4 class="titulo-cartao">Até 8 alunos por turma</h4>
+          <p class="texto-cartao">Todo mundo fala em todas as aulas.</p>
         </div></article>
-        <article class="card"><div class="card-body">
-          <h4 class="card-title">Professores com experiência no exterior</h4>
-          <p class="card-text">Sotaques e situações reais do idioma.</p>
+        <article class="cartao"><div class="cartao-corpo">
+          <h4 class="titulo-cartao">Professores com experiência no exterior</h4>
+          <p class="texto-cartao">Sotaques e situações reais do idioma.</p>
         </div></article>
-        <article class="card"><div class="card-body">
-          <h4 class="card-title">Aulas de conversação</h4>
-          <p class="card-text">Para quem entende, mas trava na hora de falar.</p>
+        <article class="cartao"><div class="cartao-corpo">
+          <h4 class="titulo-cartao">Aulas de conversação</h4>
+          <p class="texto-cartao">Para quem entende, mas trava na hora de falar.</p>
         </div></article>
       </div>
     </section>
@@ -156,28 +161,28 @@
       </div>
 
       <div class="container-contato">
-        <form class="card card-body form-lead" id="form-lead" novalidate>
+        <form class="cartao cartao-corpo form-lead" id="form-lead" novalidate>
           <div class="campo">
-            <label class="form-label" for="nome">Nome</label>
-            <input class="form-control" type="text" id="nome" name="nome" placeholder="Seu nome completo" autocomplete="name" required>
+            <label class="rotulo-form" for="nome">Nome</label>
+            <input class="controle-form" type="text" id="nome" name="nome" placeholder="Seu nome completo" autocomplete="name" required>
             <small class="erro" aria-live="polite"></small>
           </div>
 
           <div class="campo">
-            <label class="form-label" for="whatsapp">WhatsApp</label>
-            <input class="form-control" type="tel" id="whatsapp" name="whatsapp" placeholder="(21) 90000-0000" autocomplete="tel" inputmode="numeric" required>
+            <label class="rotulo-form" for="whatsapp">WhatsApp</label>
+            <input class="controle-form" type="tel" id="whatsapp" name="whatsapp" placeholder="(21) 90000-0000" autocomplete="tel" inputmode="numeric" required>
             <small class="erro" aria-live="polite"></small>
           </div>
 
           <div class="campo">
-            <label class="form-label" for="email">E-mail</label>
-            <input class="form-control" type="email" id="email" name="email" placeholder="voce@email.com" autocomplete="email" required>
+            <label class="rotulo-form" for="email">E-mail</label>
+            <input class="controle-form" type="email" id="email" name="email" placeholder="voce@email.com" autocomplete="email" required>
             <small class="erro" aria-live="polite"></small>
           </div>
 
           <div class="campo">
-            <label class="form-label" for="curso">Curso de interesse</label>
-            <select class="form-select" id="curso" name="curso" required>
+            <label class="rotulo-form" for="curso">Curso de interesse</label>
+            <select class="seletor-form" id="curso" name="curso" required>
               <option value="">Selecione: inglês, espanhol ou conversação</option>
               <option value="ingles">Inglês</option>
               <option value="espanhol">Espanhol</option>
@@ -187,27 +192,27 @@
           </div>
 
           <div class="campo">
-            <label class="form-label" for="idade">Idade do aluno</label>
-            <input class="form-control" type="number" id="idade" name="idade" placeholder="Ex.: 9" min="7" max="120" required>
+            <label class="rotulo-form" for="idade">Idade do aluno</label>
+            <input class="controle-form" type="number" id="idade" name="idade" placeholder="Ex.: 9" min="7" max="120" required>
             <small class="erro" aria-live="polite"></small>
           </div>
 
-          <button type="submit" class="theme-secondary btn-solid">Quero fazer o teste</button>
-          <p class="text-muted nota-form">Se o aluno for menor de idade, o contato é feito com o responsável.</p>
+          <button type="submit" class="botao botao-primario">Quero fazer o teste</button>
+          <p class="texto-suave nota-form">Se o aluno for menor de idade, o contato é feito com o responsável.</p>
           <p class="status-form" id="status-form" role="status" aria-live="polite"></p>
         </form>
 
         <div class="info-contato">
           <div>
-            <h6 class="text-muted">Endereço</h6>
+            <h6 class="texto-suave">Endereço</h6>
             <p>Rua Conde de Bonfim, Tijuca · Rio de Janeiro</p>
           </div>
           <div>
-            <h6 class="text-muted">Secretaria</h6>
+            <h6 class="texto-suave">Secretaria</h6>
             <p>Seg a sex, 9h às 20h · Sáb, 9h às 13h</p>
           </div>
           <div>
-            <h6 class="text-muted">Contato</h6>
+            <h6 class="texto-suave">Contato</h6>
             <p>WhatsApp · @ponte.idiomas</p>
           </div>
           <div class="placeholder-img mapa" role="img" aria-label="Mapa (Google Maps)">
@@ -219,7 +224,7 @@
   </main>
 
   <!-- Botão fixo de WhatsApp -->
-  <a href="#" role="button" class="theme-secondary btn-solid rounded-pill whatsapp-fixo">WhatsApp</a>
+  <a href="#" class="botao botao-primario botao-arredondado whatsapp-fixo">WhatsApp</a>
 
   <footer>
     <!-- Rodapé -->
