@@ -13,8 +13,8 @@
 </head>
 <body>
   <!-- Header: mesmo conteúdo da Home (index.html). Se mudar lá, mude aqui também.
-       A Home usa Bootstrap; aqui o mesmo HTML é estilizado em css/cursos.css, sem Bootstrap.
-       O menu do celular abre e fecha com HTML nativo (<dialog> + command/commandfor). -->
+       Os estilos ficam em css/style.css: a lista .navegacao-desktop aparece em telas largas
+       e o botão ☰ abre o menu do celular (até 720px) com HTML nativo (<dialog> + command/commandfor). -->
   <header>
     <!-- Barra de aviso -->
     <div class="avisos">
@@ -23,6 +23,15 @@
 
     <nav class="barra-nav" aria-label="Principal">
       <a class="navbar-brand" href="index.html">PONTE IDIOMAS</a>
+
+      <ul class="navbar-nav navegacao-desktop">
+        <li><a class="nav-link" href="index.html">Início</a></li>
+        <li><a class="nav-link" href="cursos.html" aria-current="page">Cursos</a></li>
+        <li><a class="nav-link" href="#">Metodologia</a></li>
+        <li><a class="nav-link" href="#">Equipe</a></li>
+        <li><a class="nav-link" href="index.html#contato">Contato</a></li>
+        <li><a class="nav-cta" href="index.html#contato">Fazer teste de nível</a></li>
+      </ul>
 
       <button class="navbar-toggler" type="button" command="show-modal" commandfor="menuDrawer" aria-label="Abrir menu">
         <span class="navbar-toggler-icon" aria-hidden="true"></span>
