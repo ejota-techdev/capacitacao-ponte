@@ -1,0 +1,113 @@
+{
+  "name": "Leads - listar",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "leads-lista",
+        "authentication": "headerAuth",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "c2374cdc-fd35-44c1-83f8-9b4743e239cb",
+      "name": "Webhook",
+      "webhookId": "db261302-9d1f-41d3-b25a-6692b36d3ec0",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "dpiROihFWIxkcJ18",
+          "name": "Token - listar leads"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1K0bV9-E76q7aLc40WGA3J006EHrnjzkUP31WocnI_oM",
+          "mode": "list",
+          "cachedResultName": "Leads — Ponte Idiomas",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1K0bV9-E76q7aLc40WGA3J006EHrnjzkUP31WocnI_oM/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Leads",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1K0bV9-E76q7aLc40WGA3J006EHrnjzkUP31WocnI_oM/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        224,
+        0
+      ],
+      "id": "c82c201f-0816-4195-b555-9a5481b6ec5c",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "CbHK610dWnqbLZ6r",
+          "name": "Google Sheets - Ponte Idiomas"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "allIncomingItems",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        448,
+        0
+      ],
+      "id": "2a0f94e2-5972-4ce1-bddc-018dca04b1fd",
+      "name": "Respond to Webhook"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "3fdb6257-e602-40ff-84bc-b42dcd018286",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "00ae8f947a1566100cb7c236d46ac0353fa48726d9fdf6f8f7ff475c02ef320f"
+  },
+  "nodeGroups": [],
+  "id": "wqdRsP6OJGuIBGIu",
+  "tags": []
+}
