@@ -41,3 +41,17 @@ Para desenvolvimento, a URL `webhook-test` do n8n só recebe requisições enqua
 o Webhook estiver em modo de teste, aguardando um evento. Para manter o fluxo
 disponível, ative-o no n8n e use a Production URL (`/webhook/...`) na variável de
 ambiente. Reinicie o Next.js após alterar `.env.local`.
+
+## Listagem de leads
+
+`GET /api/leads` devolve, em JSON, os leads gravados na planilha. A rota chama o
+fluxo `Leads - listar` do n8n (webhook `leads-lista`) e envia o token no header
+`x-api-token`.
+
+Variáveis em `site/.env.local` (modelo em `site/.env.example`):
+
+- `N8N_LEADS_WEBHOOK_URL`: Production URL do webhook de listagem.
+- `N8N_TOKEN`: o mesmo valor cadastrado na credencial Header Auth do n8n.
+
+A lista contém dados pessoais, inclusive de menores. Por isso a rota só funciona
+em desenvolvimento (`npm run dev`) e responde `404` no site publicado.
